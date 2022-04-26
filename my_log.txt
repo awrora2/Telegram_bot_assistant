@@ -1,0 +1,32 @@
+2022-04-26 12:44:52,386 - root - CRITICAL - Отсутствует 1156138850
+2022-04-26 12:44:52,572 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): practicum.yandex.ru:443
+2022-04-26 12:44:54,028 - urllib3.connectionpool - DEBUG - https://practicum.yandex.ru:443 "GET /api/user_api/homework_statuses/?from_date=1650966292 HTTP/1.1" 200 42
+2022-04-26 12:44:54,033 - __main__ - ERROR - Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1650966294}
+2022-04-26 12:44:54,033 - telegram.bot - DEBUG - Entering: send_message
+2022-04-26 12:44:57,341 - telegram.bot - DEBUG - {'caption_entities': [], 'chat': {'first_name': 'Aurora', 'type': 'private', 'id': 1156138850}, 'text': "Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1650966294}", 'photo': [], 'message_id': 8, 'channel_chat_created': False, 'group_chat_created': False, 'entities': [], 'new_chat_members': [], 'new_chat_photo': [], 'date': 1650966297, 'supergroup_chat_created': False, 'delete_chat_photo': False, 'from': {'first_name': 'HomeworkYandexPracticumBot', 'username': 'Homework_Yandex_Practicum_Bot', 'id': 5300973247, 'is_bot': True}}
+2022-04-26 12:44:57,342 - telegram.bot - DEBUG - Exiting: send_message
+2022-04-26 12:49:33,281 - root - CRITICAL - Отсутствует 1156138850
+2022-04-26 12:49:33,294 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): practicum.yandex.ru:443
+2022-04-26 12:49:34,315 - urllib3.connectionpool - DEBUG - https://practicum.yandex.ru:443 "GET /api/user_api/homework_statuses/?from_date=1650966573 HTTP/1.1" 200 42
+2022-04-26 12:49:34,320 - __main__ - ERROR - Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1650966574}
+2022-04-26 12:49:34,320 - telegram.bot - DEBUG - Entering: send_message
+2022-04-26 12:49:34,645 - telegram.bot - DEBUG - {'caption_entities': [], 'date': 1650966574, 'supergroup_chat_created': False, 'channel_chat_created': False, 'group_chat_created': False, 'message_id': 9, 'delete_chat_photo': False, 'new_chat_members': [], 'photo': [], 'text': "Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1650966574}", 'chat': {'first_name': 'Aurora', 'id': 1156138850, 'type': 'private'}, 'entities': [], 'new_chat_photo': [], 'from': {'first_name': 'HomeworkYandexPracticumBot', 'id': 5300973247, 'username': 'Homework_Yandex_Practicum_Bot', 'is_bot': True}}
+2022-04-26 12:49:34,646 - telegram.bot - DEBUG - Exiting: send_message
+2022-04-26 12:51:05,350 - root - CRITICAL - Отсутствует 1156138850
+2022-04-26 12:51:05,375 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): practicum.yandex.ru:443
+2022-04-26 12:51:06,790 - urllib3.connectionpool - DEBUG - https://practicum.yandex.ru:443 "GET /api/user_api/homework_statuses/?from_date=1650966665 HTTP/1.1" 200 42
+2022-04-26 12:51:06,795 - __main__ - ERROR - Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1650966666}
+2022-04-26 12:51:06,795 - telegram.bot - DEBUG - Entering: send_message
+2022-04-26 12:51:07,103 - telegram.bot - DEBUG - {'supergroup_chat_created': False, 'group_chat_created': False, 'delete_chat_photo': False, 'new_chat_photo': [], 'chat': {'first_name': 'Aurora', 'type': 'private', 'id': 1156138850}, 'entities': [], 'channel_chat_created': False, 'photo': [], 'message_id': 10, 'caption_entities': [], 'text': "Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1650966666}", 'new_chat_members': [], 'date': 1650966667, 'from': {'is_bot': True, 'first_name': 'HomeworkYandexPracticumBot', 'username': 'Homework_Yandex_Practicum_Bot', 'id': 5300973247}}
+2022-04-26 12:51:07,104 - telegram.bot - DEBUG - Exiting: send_message
+2022-04-26 13:01:07,091 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): practicum.yandex.ru:443
+2022-04-26 13:01:08,087 - urllib3.connectionpool - DEBUG - https://practicum.yandex.ru:443 "GET /api/user_api/homework_statuses/?from_date=1650966666 HTTP/1.1" 200 42
+2022-04-26 13:01:08,092 - __main__ - ERROR - Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1650967268}
+2022-04-26 13:01:08,092 - telegram.bot - DEBUG - Entering: send_message
+2022-04-26 16:26:15,469 - root - CRITICAL - Отсутствует 1156138850
+2022-04-26 16:26:15,600 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): practicum.yandex.ru:443
+2022-04-26 16:26:16,597 - urllib3.connectionpool - DEBUG - https://practicum.yandex.ru:443 "GET /api/user_api/homework_statuses/?from_date=1650979575 HTTP/1.1" 200 42
+2022-04-26 16:26:16,602 - __main__ - ERROR - Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1650979576}
+2022-04-26 16:26:16,602 - telegram.bot - DEBUG - Entering: send_message
+2022-04-26 16:26:17,003 - telegram.bot - DEBUG - {'text': "Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1650979576}", 'delete_chat_photo': False, 'group_chat_created': False, 'channel_chat_created': False, 'photo': [], 'new_chat_members': [], 'chat': {'first_name': 'Aurora', 'type': 'private', 'id': 1156138850}, 'date': 1650979577, 'message_id': 11, 'caption_entities': [], 'supergroup_chat_created': False, 'entities': [], 'new_chat_photo': [], 'from': {'username': 'Homework_Yandex_Practicum_Bot', 'first_name': 'HomeworkYandexPracticumBot', 'id': 5300973247, 'is_bot': True}}
+2022-04-26 16:26:17,004 - telegram.bot - DEBUG - Exiting: send_message
