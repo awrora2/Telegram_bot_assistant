@@ -101,3 +101,6 @@
 2022-04-27 17:59:36,658 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): practicum.yandex.ru:443
 2022-04-27 17:59:37,198 - urllib3.connectionpool - DEBUG - https://practicum.yandex.ru:443 "GET /api/user_api/homework_statuses/?from_date=1651071576 HTTP/1.1" 200 42
 2022-04-27 17:59:37,203 - __main__ - ERROR - Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1651071577}
+2022-04-27 18:25:55,748 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): practicum.yandex.ru:443
+2022-04-27 18:25:56,295 - urllib3.connectionpool - DEBUG - https://practicum.yandex.ru:443 "GET /api/user_api/homework_statuses/?from_date=1651073155 HTTP/1.1" 200 42
+2022-04-27 18:25:56,301 - __main__ - ERROR - Сбой в работе программы: Отсутствуют данные в {'homeworks': [], 'current_date': 1651073156}
