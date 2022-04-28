@@ -8,7 +8,7 @@ import requests
 import telegram
 from dotenv import load_dotenv
 
-from settings import RETRY_TIME, ENDPOINT, HOMEWORK_STATUSES
+from settings import ENDPOINT, HOMEWORK_STATUSES, RETRY_TIME
 
 load_dotenv()
 
@@ -44,34 +44,37 @@ def get_api_answer(current_timestamp):
     params = {'from_date': timestamp}
     try:
         response = requests.get(ENDPOINT, headers=HEADERS, params=params)
-        if response.status_code == HTTPStatus.OK:
-            return response.json()
     except Exception:
         logger.error('Сбой. Запрос к API не выполнен.')
-    raise AssertionError('API возвращает код, отличный от 200')
+    if response.status_code == HTTPStatus.OK:
+        try:
+            return response.json()
+        except Exception:
+            logger.error('Ошибка при преобразовании')
+    else:
+        raise AssertionError('API возвращает код, отличный от 200')
 
 
 def check_response(response):
     """Проверка ответа API на корректность."""
-    homework = response['homeworks']
     if not isinstance(response, dict):
         raise TypeError('Некорректный тип')
-    if not response['homeworks']:
+    if 'homeworks' not in response:
         raise TypeError(f'Отсутствуют данные в {response}')
-    if not isinstance(homework, list):
+    if not isinstance(response['homeworks'], list):
         raise TypeError('Некорректный тип')
-    if not homework:
-        raise TypeError('Список пуст')
     logging.info('Статус обновлен')
-    return homework
+    if not response['homeworks']:
+        logging.info('Статус не изменился')
+    return response['homeworks']
 
 
 def parse_status(homework):
     """Извлечение из информации о конкретной домашней работе."""
-    if not isinstance(homework, dict):
-        raise TypeError('Некорректный тип ответа')
-    if 'homework_name' and 'status' not in homework:
-        raise KeyError('Отсутствуют искомые ключи')
+    if 'homework_name' not in homework:
+        raise KeyError('Отсутствуют искомый ключ homework_name')
+    elif 'status' not in homework:
+        raise KeyError('Отсутствуют искомый ключ status')
     if homework['status'] not in HOMEWORK_STATUSES:
         raise KeyError('Недокументированный статус')
     homework_name = homework['homework_name']
@@ -87,23 +90,21 @@ def check_tokens():
 
 def main():
     """Основная логика работы бота."""
-    check_tokens()
+    if not check_tokens():
+        sys.exit()
     while True:
         bot = telegram.Bot(token=TELEGRAM_TOKEN)
         current_timestamp = int(time.time())
         try:
             response = get_api_answer(current_timestamp)
             current_timestamp = response['current_date']
-            homework = check_response(response)
+            homework = check_response(response)[0]
             message = parse_status(homework)
-            send_message(bot, message)
-            if not homework:
-                logger.debug('Обновлений нет')
         except Exception as error:
-            logger.error(f'Сбой в работе программы: {error}')
-            send_message(bot, message)
+            logger.error(f'Сбой. {error}')
         finally:
             time.sleep(RETRY_TIME)
+            send_message(bot, message)
 
 
 if __name__ == '__main__':
